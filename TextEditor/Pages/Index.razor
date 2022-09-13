@@ -1,0 +1,30 @@
+﻿@page "/"
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<div class="rich-text-editor" style="width: 100%">
+    <SfRichTextEditor
+        CssClass="customClass "
+        @ref="editor"
+        ShowCharCount="true"
+        Id="test"
+        Value="@Text"
+        ValueChanged="Callback">
+        <RichTextEditorToolbarSettings Items="@tools"/>
+        <RichTextEditorQuickToolbarSettings Table="@tableQuickToolbarItems"/>
+        <RichTextEditorFontSize Default="@DefaultFontSize" Items="@fontSizeItems" />
+        <RichTextEditorFontFamily Default="@DefaultFontFamily" Items="@FontFamilyItems"/>
+    </SfRichTextEditor>
+</div>
+
+<span>@Text</span>
+<style>
+    .customClass .e-rte-content .e-content {
+        /* to get the desired font on intially*/
+        /* https://blazor.syncfusion.com/documentation/rich-text-editor/how-to/default-font*/
+        font-family: "Arial";
+        font-size: 72pt;
+    }
+    
+</style>
